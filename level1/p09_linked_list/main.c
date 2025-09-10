@@ -60,7 +60,7 @@ struct plate* invertList(struct plate* p2)
 		p2->next = p;
 		p = p2;
 		p2 = next_node;
-{}
+
 	}
 	next_node->next = p;//p3为新头结点
 	/*head->next = NULL;*/
