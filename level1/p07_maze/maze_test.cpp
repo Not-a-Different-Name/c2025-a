@@ -83,7 +83,7 @@ void game() {
                 movePlayer(playerRow, playerCol + 1);
                 break;
 			default:
-                printf("your mum havent told you how to use AWSD??????");
+                printf("。。。。。。");
                 break;
             }
         }
