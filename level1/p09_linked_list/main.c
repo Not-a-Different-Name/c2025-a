@@ -32,6 +32,19 @@ void initList(struct plate* p1,int count)
 	//p1此时为尾结点,p2在局部
 }
 
+int free_list(struct plate* head)
+{
+	struct plate* p = head;
+	while (p != NULL)
+	{
+		struct plate* temp = p;
+		p = p->next;
+		free(temp);
+	}
+	return 0;
+}
+
+
 struct plate* invertList(struct plate* p2)
 {
 	if (p2 == NULL || p2->next == NULL) {
@@ -138,6 +151,13 @@ int main(void)
 	system("pause");
 	continue_search_5(head, flag);
 
-	free(next_node);
+
+	//释放内存
+	free_list(head);
+	free(head);
+	head = NULL;
 	return 0;
 }//结尾p2为末项
+
+
+
