@@ -10,8 +10,8 @@ void encryption(char* data, int key)
 {
     for (int i = 0; data[i] != '\0'; i++)
     {
-        // data[i] = data[i] ^ key ;
-        data[i] = data[i] + key ;
+         data[i] = data[i] ^ key ;
+        //data[i] = data[i] + key ;
     }
     printf("encrypt string: %s\n", data);
 }
@@ -21,8 +21,8 @@ void decrypt(char* data, int key)
 {
     for (int i = 0; data[i] != '\0'; i++)
     {
-        // data[i] = data[i]  ^ key;
-        data[i] = data[i]  - key;
+         data[i] = data[i]  ^ key;
+        //data[i] = data[i]  - key;
     }
     printf("decrypt string: %s\n", data);
 }
