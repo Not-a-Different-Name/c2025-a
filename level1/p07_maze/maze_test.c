@@ -59,13 +59,13 @@ void game() {
     while (!gameOver) {
         system("cls");
         printMaze();
-        printf("使用awsd移动\n");
+        printf("input a w s d to move\n");
         
 
         // 方向键移动
         char key;
-        int check;
-		check = scanf_s("%c", &key, 1);
+        int check = 1;
+		key = getch();
         if (check != 0) 
         {  
 
@@ -83,7 +83,7 @@ void game() {
                 movePlayer(playerRow, playerCol + 1);
                 break;
 			default:
-                printf("。。。。。。");
+                printf("\n");
                 break;
             }
         }
@@ -94,23 +94,24 @@ void game() {
     printMaze();
     if (playerWon) 
     {
-        printf("\n恭喜你成功走出迷宫！\n");
+        printf("\nyou win！\n");
     }
     else 
     {
-        printf("\n游戏结束！\n");
+        printf("\ngame over！\n");
     }
 }
 
 
 //main for play
 int main() {
-    printf("迷宫游戏\n");
+    printf("A_maze\n");
     printf("press any key to start...\n");
 	system("pause");
+    system("sys -icanon");
 
 	generateMaze(maze);
     game();
-
+    system("pause");
     return 0;
 }

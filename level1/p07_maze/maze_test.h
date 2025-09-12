@@ -6,21 +6,21 @@
 #include <time.h>
 #include "maze_test.h"
 
-// ÃÔ¹¬³ß´çÐèÎªÆæÊý
+// ï¿½Ô¹ï¿½ï¿½ß´ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½
 #define ROWS 15
 #define COLS 15
-//rowÊú colºá
+//rowï¿½ï¿½ colï¿½ï¿½
 
 #define WALL '#'
 #define PATH ' '
 #define PLAYER 'P'
 #define EXIT 'E'
 
-// ·½Ïò¼ü
-#define KEY_UP 'w'
-#define KEY_DOWN 's'
-#define KEY_LEFT 'a'
-#define KEY_RIGHT 'd'
+// ï¿½ï¿½ï¿½ï¿½ï¿½
+#define KEY_UP 72
+#define KEY_DOWN 80
+#define KEY_LEFT 75
+#define KEY_RIGHT 77
 
 void printMaze();
 

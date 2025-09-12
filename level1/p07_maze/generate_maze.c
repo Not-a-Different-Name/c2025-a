@@ -1,17 +1,16 @@
 #include "maze_test.h"
-#include "generate_maze.h"
 
 
 
 // DFS
 void generateMazeDFS(int x, int y, char maze[ROWS][COLS]) 
 {
-    maze[y][x] = PATH;  // ±ê¼ÇÎªÍ¨Â·
+    maze[y][x] = PATH;  // ï¿½ï¿½ï¿½ÎªÍ¨Â·
 
-    // ËÄÏò
+    // ï¿½ï¿½ï¿½ï¿½
     int dirs[4][2] = { {0, -1}, {1, 0}, {0, 1}, {-1, 0} };
 
-    // ´òÂÒ
+    // ï¿½ï¿½ï¿½ï¿½
     for (int i = 0; i < 4; i++) {
         /*srand((unsigned int)time(NULL));*/
         int r = rand() % 4;
@@ -26,14 +25,14 @@ void generateMazeDFS(int x, int y, char maze[ROWS][COLS])
         dirs[r][1] = tempY;
     }
 
-    // ³¢ÊÔÃ¿¸ö·½Ïò
+    // ï¿½ï¿½ï¿½ï¿½Ã¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     for (int i = 0; i < 4; i++) {
         int nx = x + 2 * dirs[i][0];
         int ny = y + 2 * dirs[i][1];
 
         if (nx > 0 && nx < COLS - 1 && ny > 0 && ny < ROWS - 1 && maze[ny][nx] == '#') {
             
-            // ´òÍ¨Ç½±Ú
+            // ï¿½ï¿½Í¨Ç½ï¿½ï¿½
             maze[y + dirs[i][1] ][x + dirs[i][0] ] = PATH;
             if(nx == COLS - 2 && ny == ROWS - 2)
             {
@@ -51,7 +50,7 @@ void generateMazeDFS(int x, int y, char maze[ROWS][COLS])
 
 //generate maze
 int generateMaze(char maze[ROWS][COLS]) {
-	// ³õÊ¼»¯ÃÔ¹¬£¬È«²¿ÉèÎªÇ½
+	// ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½Ô¹ï¿½ï¿½ï¿½È«ï¿½ï¿½ï¿½ï¿½ÎªÇ½
 	for (int i = 0; i < ROWS; i++) {
 		for (int j = 0; j < COLS; j++) {
 			maze[i][j] = WALL;
@@ -60,7 +59,7 @@ int generateMaze(char maze[ROWS][COLS]) {
 
     printMaze();
 	system("pause");
-    // ÉèÖÃ³ö¿ÚÎ»ÖÃ
+    // ï¿½ï¿½ï¿½Ã³ï¿½ï¿½ï¿½Î»ï¿½ï¿½
 	//maze[ROWS - 2][COLS - 2] = EXIT;
 	
 	//
