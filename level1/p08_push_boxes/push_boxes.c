@@ -20,6 +20,8 @@ char* GetMemory(char** p, int num)
 
 
 
+
+//
 int get_level(char name[20])// get level file name
 {
 
@@ -34,7 +36,6 @@ int get_level(char name[20])// get level file name
     if ((err = fopen_s(&fp, name, "r")) != 0)
     {
         printf("无法打开此文件\n");
-        system("pause");
         exit(1);
     }
 
@@ -48,18 +49,18 @@ int get_level(char name[20])// get level file name
         exit(2);
     }
 
- 
+
 
     // 读取并检查文件内容
     for (int i = 0; i < ROWS; i++)
     {
         /*for (int j = 0; j < COLS; j++)
         {
-            
+
             global_map[i][j] = fgetc(fp);
-                
+
         }
-        
+
         global_map[i][COLS] = '\0';*/ // 确保字符串以null结尾
         if (fgets(global_map[i], 1024, fp) != NULL)//这里读取1024过大量
         {
@@ -70,12 +71,12 @@ int get_level(char name[20])// get level file name
         }
         else {
             printf("Error reading line %d from file\n", i + 1);
-           
+
             fclose(fp);
             exit(1);
         }
     }
-    
+
 
 
 
@@ -95,21 +96,21 @@ int main() {
 
     while (1)
     {
-        
+
 		printf("choose level:\n1.easy\n2.normal\n3.hard\nor 4 for quit");
 		char choice = getch();
         switch (choice)
         {
         case '1':
-			// get_level("1.txt");
+			get_level("1.txt");
 			game("1.txt");
             break;
         case '2':
-            // get_level("2.txt");
+            get_level("2.txt");
 			game("2.txt");
             break;
         case '3':
-            // get_level("3.txt");
+            get_level("3.txt");
 			game("3.txt");
             break;
         case '4':
