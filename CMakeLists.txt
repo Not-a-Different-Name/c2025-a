@@ -25,7 +25,10 @@ add_executable(p08_push_boxes  level1/p08_push_boxes/push_process.c
 
 add_executable(p09_linked_list  level1/p09_linked_list/main.c)
 
-add_executable(p10_warehouse  level1/p10_warehouse/main.c)
+add_executable(p10_warehouse
+        level1/p10_warehouse/warehouse.h
+        level1/p10_warehouse/warehouse.c
+        level1/p10_warehouse/function_implementation.c)
 
 set(RESOURCE_DIR ${CMAKE_SOURCE_DIR}/level1/p08_push_boxes)
 file(GLOB RESOURCE_FILES ${RESOURCE_DIR}/*.txt)
@@ -53,6 +56,7 @@ foreach(resource_file ${RESOURCE_FILES})
     # 为每个目标添加复制命令
     foreach(target_name
             p08_push_boxes
+            p10_warehouse
     )
         add_custom_command(
                 TARGET ${target_name} POST_BUILD
