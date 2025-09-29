@@ -7,8 +7,8 @@
 #include "maze_test.h"
 
 // �Թ��ߴ���Ϊ����
-#define ROWS 15
-#define COLS 15
+#define ROWS 21
+#define COLS 21
 //row�� col��
 
 #define WALL '#'

@@ -105,12 +105,16 @@ int take_out(const char *model) {
                  member.model, (rsize_t) sizeof(member.model),
                  &member.quantity);
 
+        if (feof(fp))
+            break;
+
         if (member.quantity == 0 || strcmp(member.model, model) == 0) {
             // 改为字符串比较
             continue;
         }
+            fprintf(dest, "%s %d\n", member.model, member.quantity);
 
-        fprintf(dest, "%s %d\n", member.model, member.quantity);
+
     }
 
     fclose(fp);

@@ -12,7 +12,7 @@ void generateMazeDFS(int x, int y, char maze[ROWS][COLS])
 
     // ����
     for (int i = 0; i < 4; i++) {
-        /*srand((unsigned int)time(NULL));*/
+        // /*srand((unsigned int)time(NULL));
         int r = rand() % 4;
 
         int tempX = dirs[i][0];
