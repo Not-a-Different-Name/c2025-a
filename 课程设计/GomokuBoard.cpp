@@ -318,10 +318,10 @@ int GomokuBoard::evaluate(int chess, int /*chess_*/, const QVector<QPoint>& cand
 	static const int drect[4][2] = { {0,1}, {1,0}, {1,1}, {1,-1} };
 	int score = 0;
 
-	//// 强化系数：连续子权重、开放端权重、微调偏置
-	constexpr double kLen  = 1.10; // 原 0.9 -> 1.10，更强调长连
-	constexpr double kOpen = 0.70; // 原对 openends 等效系数 1.0*(openends-1) -> 0.70*(openends-1)，但整体仍更高
-	constexpr double kBias = 0.25; // 原 0.15 -> 0.25，整体抬高分数
+	////// 强化系数：连续子权重、开放端权重、微调偏置
+	//constexpr double kLen  = 1.10; // 原 0.9 -> 1.10，更强调长连
+	//constexpr double kOpen = 0.70; // 原对 openends 等效系数 1.0*(openends-1) -> 0.70*(openends-1)，但整体仍更高
+	//constexpr double kBias = 0.25; // 原 0.15 -> 0.25，整体抬高分数
 
     for (const QPoint& mv : m_candidates) {
         int i = mv.x(), j = mv.y();
@@ -340,9 +340,9 @@ int GomokuBoard::evaluate(int chess, int /*chess_*/, const QVector<QPoint>& cand
 			if (inBoard(er, ec) && m_board[er][ec] == Empty) openends++;
 			if (count >= 5) return INT_MAX;
 
-			// 加强后的代数运算得分（注意：当前实现是覆盖而非累加）
-			score += (openends > 0)? static_cast<int>(pow(10.0, kLen * count + kOpen * (openends - 1) + kBias)) : 0;
-			/*switch (count) {
+			//// 加强后的代数运算得分（注意：当前实现是覆盖而非累加）
+			//score += (openends > 0)? static_cast<int>(pow(10.0, kLen * count + kOpen * (openends - 1) + kBias)) : 0;
+			switch (count) {
 			case 1:
 				score += (openends == 2) ? 10 : (openends == 1 ? 2 : 0);
 				break;
@@ -357,7 +357,7 @@ int GomokuBoard::evaluate(int chess, int /*chess_*/, const QVector<QPoint>& cand
 				break;
 			default:
 				break;
-			}*/
+			}
 		}
 	}
 	return score;

@@ -25,9 +25,9 @@ void QtWidgetsApplication1::setupGameUi() // 组装游戏界面
     QMenu* gameMenu = menuBar()->addMenu("游戏"); // 在菜单栏添加“游戏”菜单
     QMenu* gameMenu2 = menuBar()->addMenu("无用菜单项"); // 在菜单栏添加“游戏”菜单
     m_newGameAct = new QAction("新局", this); // 创建“新局”动作
-    m_newGameAct->setShortcut(QKeySequence::New); // Ctrl+N 设置快捷键
+    m_newGameAct->setShortcut(QKeySequence::New); 
     m_undoAct = new QAction("悔棋", this); // 创建“悔棋”动作
-    m_undoAct->setShortcut(QKeySequence::Undo);   // Ctrl+Z 设置快捷键
+    m_undoAct->setShortcut(QKeySequence::Undo);   
     m_depthAct = new QAction("depth", this); // 创建动作
     m_evaluateAct = new QAction("eva", this); // 创建动作
 
